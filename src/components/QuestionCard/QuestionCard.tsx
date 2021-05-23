@@ -1,6 +1,5 @@
 import "./QuestionCard.css";
 import { QuestionPropType } from "../../context/quiz.types";
-import { useState } from "react";
 import { Option } from "./Option";
 
 export const QuestionCard = ({
@@ -8,9 +7,9 @@ export const QuestionCard = ({
   dispatch,
   state,
   loadNextQuestion,
+  loading,
+  setLoading,
 }: QuestionPropType): JSX.Element => {
-  const [loading, setLoading] = useState<boolean>(false);
-
   const isAlreadyAnswered = (questionId: string): boolean =>
     state.answers.some((question) => question.questionId === questionId);
 

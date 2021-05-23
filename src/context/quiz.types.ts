@@ -96,6 +96,8 @@ export type QuestionPropType = {
   dispatch: React.Dispatch<AnswerActionType>;
   state: TakenQuiz;
   loadNextQuestion: () => void;
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export type AnswerActionType =

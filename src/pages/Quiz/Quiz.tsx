@@ -19,6 +19,8 @@ export const Quiz = (): JSX.Element => {
     answers: [],
   });
 
+  const [loading, setLoading] = useState<boolean>(false);
+
   const selectedQuiz = quizList.find((quiz) => quiz.id === id);
 
   const loadNextQuestion = (): void => {
@@ -54,18 +56,28 @@ export const Quiz = (): JSX.Element => {
           dispatch={answerDispatch}
           state={answerState}
           loadNextQuestion={loadNextQuestion}
+          loading={loading}
+          setLoading={setLoading}
         />
       )}
 
       {!isLastQuestion && (
         <div className="quiz__question__button">
-          <button onClick={loadNextQuestion}>SKIP</button>
-          <button onClick={loadNextQuestion}>NEXT</button>
+          <button disabled={loading} onClick={loadNextQuestion}>
+            SKIP
+          </button>
+          <button disabled={loading} onClick={loadNextQuestion}>
+            NEXT
+          </button>
         </div>
       )}
 
       {isLastQuestion && (
-        <button className="quiz__submit__button" onClick={submitQuiz}>
+        <button
+          disabled={loading}
+          className="quiz__submit__button"
+          onClick={submitQuiz}
+        >
           SUBMIT
         </button>
       )}
