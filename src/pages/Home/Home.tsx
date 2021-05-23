@@ -1,6 +1,7 @@
+import "./Home.css";
 import { useState } from "react";
-import { useQuiz } from "../hooks";
-import { QuizCard } from "../components";
+import { useQuiz } from "../../hooks";
+import { QuizCard } from "../../components";
 
 export const Home = (): JSX.Element => {
   const {
@@ -10,7 +11,7 @@ export const Home = (): JSX.Element => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   return (
-    <div>
+    <div className="quiz__home">
       {quizList.map((quiz) => {
         return (
           <QuizCard

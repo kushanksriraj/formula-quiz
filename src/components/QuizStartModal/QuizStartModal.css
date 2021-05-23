@@ -1,7 +1,68 @@
 .quiz__start__modal {
-    width: 100vw;
-    height: 100vh;
-    background-color: #e4e4e4;
-    position: fixed;
-    top: 0;
+  width: 100vw;
+  margin-top: 4.5rem;
+  top: 0;
+  height: 100%;
+  background-color: #1f1f2718;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.quiz__start__modal-body {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: max-content;
+  padding: 1rem;
+  max-width: 600px;
+}
+
+.quiz__start__modal__img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.quiz__start__modal__title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+  padding: 1rem 0;
+}
+
+.quiz__start__modal__rules {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.quiz__start__modal__rules > li {
+  font-weight: bold;
+}
+
+.quiz__start__modal__buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.quiz__start__modal__buttons > button {
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem;
+  background-color: #ff5b5b;
+  border: 3px solid #ff5b5b;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 1rem;
+  font-size: 1rem;
+}
+
+.quiz__start__modal__buttons > button:nth-child(1) {
+  background-color: black;
+  border: 3px solid black;
 }

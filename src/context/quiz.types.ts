@@ -85,6 +85,10 @@ export type QuizStartModalProps = {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
   id: string;
+  title: string;
+  totalQuestions: number;
+  totalTimeInSeconds: string;
+  quizImage: string;
 };
 
 export type QuestionPropType = {

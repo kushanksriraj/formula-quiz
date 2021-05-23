@@ -18,7 +18,7 @@ export const Option = (props: OptionPropType): JSX.Element => {
           ? props.option.isRight
             ? "right option__text"
             : "wrong  option__text"
-          : " option__text"
+          : "option__text"
       }
     >
       {props.option.text}

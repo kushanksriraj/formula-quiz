@@ -47,17 +47,19 @@ export const QuestionCard = ({
 
   return (
     <div>
-      <div className="quiz__question">{question.text}</div>
-      {question.options.map((option) => {
-        return (
-          <Option
-            key={option.id}
-            option={option}
-            callback={selectOptionOnClick}
-            loading={loading}
-          />
-        );
-      })}
+      <div className="quiz__question">Q. {question.text}</div>
+      <div className="quiz__options">
+        {question.options.map((option) => {
+          return (
+            <Option
+              key={option.id}
+              option={option}
+              callback={selectOptionOnClick}
+              loading={loading}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

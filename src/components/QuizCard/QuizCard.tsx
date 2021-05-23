@@ -7,7 +7,6 @@ export const QuizCard = (props: QuizCardProps): JSX.Element => {
       <article className="quiz__card">
         <div className="quiz__card__question">{props.title}</div>
         <div className="quiz__card__rule">
-          Rules:
           <ul>
             <li>Time: {props.totalTimeInSeconds} seconds</li>
             <li>{props.totalQuestions} Questions</li>
@@ -23,6 +22,10 @@ export const QuizCard = (props: QuizCardProps): JSX.Element => {
           showModal={props.showModal}
           setShowModal={props.setShowModal}
           id={props.id}
+          title={props.title}
+          totalQuestions={props.totalQuestions}
+          totalTimeInSeconds={props.totalTimeInSeconds}
+          quizImage={props.quizImage}
         />
       )}
     </>

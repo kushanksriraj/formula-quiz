@@ -41,9 +41,13 @@ export const Quiz = (): JSX.Element => {
     selectedQuiz && questionNumber === selectedQuiz.totalQuestions - 1;
 
   return (
-    <div>
-      <h2>Quiz name: {selectedQuiz?.title}</h2>
-      <img className="quiz__image" src={selectedQuiz?.quizImage} alt="" />
+    <div className="quiz">
+      <div className="quiz__title">{selectedQuiz?.title}</div>
+      <img
+        className="quiz__question__image"
+        src={selectedQuiz?.questions[questionNumber].questionImage}
+        alt=""
+      />
       {selectedQuiz && (
         <QuestionCard
           question={selectedQuiz.questions[questionNumber]}
@@ -52,9 +56,19 @@ export const Quiz = (): JSX.Element => {
           loadNextQuestion={loadNextQuestion}
         />
       )}
-      {!isLastQuestion && <button onClick={loadNextQuestion}>Skip</button>}
-      {!isLastQuestion && <button onClick={loadNextQuestion}>Next</button>}
-      {isLastQuestion && <button onClick={submitQuiz}>Submit</button>}
+
+      {!isLastQuestion && (
+        <div className="quiz__question__button">
+          <button onClick={loadNextQuestion}>SKIP</button>
+          <button onClick={loadNextQuestion}>NEXT</button>
+        </div>
+      )}
+
+      {isLastQuestion && (
+        <button className="quiz__submit__button" onClick={submitQuiz}>
+          SUBMIT
+        </button>
+      )}
     </div>
   );
 };
