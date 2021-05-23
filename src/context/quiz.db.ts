@@ -11,103 +11,102 @@ export const initialState: QuizState = {
   quizList: [
     {
       id: "sdfjdshf4t",
-      title: "Check your F1 Jargon knowledge",
-      totalTimeInSeconds: "90",
+      title: "How many F1 jargons do you know?",
+      totalTimeInMinutes: "1.5",
       totalScore: 30,
       totalQuestions: 3,
       quizImage:
-        "https://www.elegantthemes.com/blog/wp-content/uploads/2021/03/featured-wordpress-quiz-plugins.png",
+        "https://contenthub-static.grammarly.com/blog/wp-content/uploads/2017/07/jar-gon.jpg",
       questions: [
         {
           id: "sdmnfbhdbsibcusd",
-          text: "What is a pitstop?",
+          text: "What is a Chassis?",
           positiveMarks: 10,
           negativeMarks: 0,
           timeInSeconds: "30",
           questionImage:
-            "https://www.elegantthemes.com/blog/wp-content/uploads/2021/03/featured-wordpress-quiz-plugins.png",
+            "https://avtotachki.com/wp-content/uploads/2020/04/shassi0-1.jpg",
           options: [
             {
               id: "dfgdfgeg4gd",
-              text: "The car stopping in between a race",
+              text: "The main part of a car to which the suspension is attached",
               isRight: true,
             },
             {
               id: "dfgdfgesdfdfsg4fdgfgd",
-              text: "Shaking chapaign",
+              text: "Side brakes that let the car do cool drifts",
               isRight: false,
             },
             {
               id: "dfgdgdfdfgeg4grtrted",
-              text: "Running out of fuel",
+              text: "Bolt of fuel tank",
               isRight: false,
             },
             {
               id: "dfgdfgeg4gfgfhftryryd",
-              text: "Hitting another car",
+              text: "Back side of the side mirror",
               isRight: false,
             },
           ],
         },
         {
           id: "sdmnfbhdbsibcgfdjgkre",
-          text: "What does a safety car do?",
+          text: "What is the meaning of Pits in F1?",
           positiveMarks: 10,
           negativeMarks: 0,
           timeInSeconds: "30",
           questionImage:
-            "https://www.elegantthemes.com/blog/wp-content/uploads/2021/03/featured-wordpress-quiz-plugins.png",
+            "https://static.wixstatic.com/media/ab3a81_f678565435a44a9d87d9824d1ae490df~mv2.jpg/v1/fill/w_960,h_580,al_c,q_90/ab3a81_f678565435a44a9d87d9824d1ae490df~mv2.jpg",
           options: [
             {
               id: "dfgdfgeg4gd",
-              text: "Helps the winner",
+              text: "Black and white stripped area around tracks",
               isRight: false,
             },
             {
               id: "dfgdfgesdfdfsg4fdgfgd",
-              text: "Saves lives in a crash",
-              isRight: true,
-            },
-            {
-              id: "dfgdgdfdfgeg4grtrted",
-              text: "It is the cause of crash",
+              text: "Pathway for safety car",
               isRight: false,
             },
             {
+              id: "dfgdgdfdfgeg4grtrted",
+              text: "An area of track where the cars stop for new tyres and fuel",
+              isRight: true,
+            },
+            {
               id: "dfgdfgeg4gfgfhftryryd",
-              text: "Just wanders on the track",
+              text: "VIP area for audience",
               isRight: false,
             },
           ],
         },
         {
           id: "sdmnfbhdbsibcgfdjggfdglkfg",
-          text: "What do understand by NASCAR?",
+          text: "What is a Visor strip?",
           positiveMarks: 10,
           negativeMarks: 0,
           timeInSeconds: "30",
-          questionImage:
-            "https://www.elegantthemes.com/blog/wp-content/uploads/2021/03/featured-wordpress-quiz-plugins.png",
+          questionImage: "https://pbs.twimg.com/media/DQdLsrWVoAETDvp.jpg",
           options: [
             {
               id: "dfgdfgeg4gd",
-              text: "Never heard about it",
+              text: "A band worn on wrist by drivers",
               isRight: false,
             },
             {
               id: "dfgdfgesdfdfsg4fdgfgd",
-              text: "Runs after a car",
+              text: "A decoration element for car",
               isRight: false,
             },
             {
               id: "dfgdgdfdfgeg4grtrted",
-              text: "Bunch of crews who quickly change tyres in a pitstop",
-              isRight: true,
+              text: "Falg for time-out during race",
+              isRight: false,
             },
             {
               id: "dfgdfgeg4gfgfhftryryd",
-              text: "Cheers a racer on radio",
-              isRight: false,
+              text: "A strip that is fitted on driver's helmet for protection",
+              isRight: true,
             },
           ],
         },
@@ -115,103 +114,102 @@ export const initialState: QuizState = {
     },
     {
       id: "sdfjdshf4fdgfdgdjgt",
-      title: "Challenge: Guess all the car parts!",
-      totalTimeInSeconds: "90",
+      title: "Check your knowledge of F1 history!",
+      totalTimeInMinutes: "1.5",
       totalScore: 30,
       totalQuestions: 3,
       quizImage:
-        "https://www.elegantthemes.com/blog/wp-content/uploads/2021/03/featured-wordpress-quiz-plugins.png",
+        "https://lh3.googleusercontent.com/proxy/oLh3ul38j0AZbv_xPv1A6gvZUXZYyITRstZjstPbu3paRvcWKN51PoIPp4M7n7TFOczw3TL0rXdo-6lKG2c8yo4NQVVU",
       questions: [
         {
           id: "sdmnfbhdbsibcusd",
-          text: "What is a pitstop?",
+          text: "Who is the youngest F1 driver to win a race?",
           positiveMarks: 10,
           negativeMarks: 0,
           timeInSeconds: "30",
           questionImage:
-            "https://www.elegantthemes.com/blog/wp-content/uploads/2021/03/featured-wordpress-quiz-plugins.png",
+            "https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/images/car-reviews/first-drives/legacy/2_verstappen_interview.jpg?itok=eW3VNvkw",
           options: [
             {
               id: "dfgdfgeg4gd",
-              text: "The car stopping in between a race",
-              isRight: true,
-            },
-            {
-              id: "dfgdfgesdfdfsg4fdgfgd",
-              text: "Shaking chapaign",
+              text: "Lewis Hamilton",
               isRight: false,
             },
             {
+              id: "dfgdfgesdfdfsg4fdgfgd",
+              text: "Max Verstappen",
+              isRight: true,
+            },
+            {
               id: "dfgdgdfdfgeg4grtrted",
-              text: "Running out of fuel",
+              text: "Aryton Senna",
               isRight: false,
             },
             {
               id: "dfgdfgeg4gfgfhftryryd",
-              text: "Hitting another car",
+              text: "Yuki Tsunoda",
               isRight: false,
             },
           ],
         },
         {
           id: "sdmnfbhdbsibcgfdjgkre",
-          text: "What does a safety car do?",
+          text: "Which team holds the record for the most wins in a season?",
           positiveMarks: 10,
           negativeMarks: 0,
           timeInSeconds: "30",
           questionImage:
-            "https://www.elegantthemes.com/blog/wp-content/uploads/2021/03/featured-wordpress-quiz-plugins.png",
+            "https://www.racefans.net/wp-content/uploads/2019/03/racefansdotnet-20190317-142455-94.jpg",
           options: [
             {
               id: "dfgdfgeg4gd",
-              text: "Helps the winner",
-              isRight: false,
-            },
-            {
-              id: "dfgdfgesdfdfsg4fdgfgd",
-              text: "Saves lives in a crash",
+              text: "Mercedes",
               isRight: true,
             },
             {
+              id: "dfgdfgesdfdfsg4fdgfgd",
+              text: "Ferrari",
+              isRight: false,
+            },
+            {
               id: "dfgdgdfdfgeg4grtrted",
-              text: "It is the cause of crash",
+              text: "RedBull",
               isRight: false,
             },
             {
               id: "dfgdfgeg4gfgfhftryryd",
-              text: "Just wanders on the track",
+              text: "Alpha Tauri",
               isRight: false,
             },
           ],
         },
         {
           id: "sdmnfbhdbsibcgfdjggfdglkfg",
-          text: "What do understand by NASCAR?",
+          text: "Who made a world record by winning all three Indian Grands Prix?",
           positiveMarks: 10,
           negativeMarks: 0,
           timeInSeconds: "30",
-          questionImage:
-            "https://www.elegantthemes.com/blog/wp-content/uploads/2021/03/featured-wordpress-quiz-plugins.png",
+          questionImage: "https://pbs.twimg.com/media/B2wXFYvCcAAMo5o.jpg",
           options: [
             {
               id: "dfgdfgeg4gd",
-              text: "Never heard about it",
+              text: "Fernando Alonso",
               isRight: false,
             },
             {
               id: "dfgdfgesdfdfsg4fdgfgd",
-              text: "Runs after a car",
+              text: "Max Verstappen",
+              isRight: false,
+            },
+            {
+              id: "dfgdfgeg4gfgfhftryryd",
+              text: "Michael Schumacher",
               isRight: false,
             },
             {
               id: "dfgdgdfdfgeg4grtrted",
-              text: "Bunch of crews who quickly change tyres in a pitstop",
+              text: "Sebastian Vettel",
               isRight: true,
-            },
-            {
-              id: "dfgdfgeg4gfgfhftryryd",
-              text: "Cheers a racer on radio",
-              isRight: false,
             },
           ],
         },

@@ -19,7 +19,7 @@ export type Question = {
 export type Quiz = {
   id: string;
   title: string;
-  totalTimeInSeconds: string;
+  totalTimeInMinutes: string;
   totalScore: number;
   totalQuestions: number;
   quizImage: string;
@@ -74,11 +74,9 @@ export type QuizProviderProp = {
 export type QuizCardProps = {
   id: string;
   title: string;
-  totalTimeInSeconds: string;
+  totalTimeInMinutes: string;
   totalQuestions: number;
   quizImage: string;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
-  showModal: boolean;
 };
 
 export type QuizStartModalProps = {
@@ -87,7 +85,7 @@ export type QuizStartModalProps = {
   id: string;
   title: string;
   totalQuestions: number;
-  totalTimeInSeconds: string;
+  totalTimeInMinutes: string;
   quizImage: string;
 };
 

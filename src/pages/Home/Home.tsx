@@ -1,5 +1,4 @@
 import "./Home.css";
-import { useState } from "react";
 import { useQuiz } from "../../hooks";
 import { QuizCard } from "../../components";
 
@@ -7,8 +6,6 @@ export const Home = (): JSX.Element => {
   const {
     state: { quizList },
   } = useQuiz();
-
-  const [showModal, setShowModal] = useState<boolean>(false);
 
   return (
     <div className="quiz__home">
@@ -19,10 +16,8 @@ export const Home = (): JSX.Element => {
             id={quiz.id}
             title={quiz.title}
             totalQuestions={quiz.totalQuestions}
-            totalTimeInSeconds={quiz.totalTimeInSeconds}
+            totalTimeInMinutes={quiz.totalTimeInMinutes}
             quizImage={quiz.quizImage}
-            setShowModal={setShowModal}
-            showModal={showModal}
           />
         );
       })}

@@ -8,7 +8,7 @@ export const QuizStartModal = ({
   id,
   title,
   totalQuestions,
-  totalTimeInSeconds,
+  totalTimeInMinutes,
   quizImage,
 }: QuizStartModalProps): JSX.Element => {
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ export const QuizStartModal = ({
         <div className="quiz__start__modal__title">{title}</div>
 
         <ul className="quiz__start__modal__rules">
-          <li>Total time: {totalTimeInSeconds} seconds</li>
+          <li>Total time: {totalTimeInMinutes} minutes</li>
           <li>Total questions: {totalQuestions}</li>
         </ul>
         <div className="quiz__start__modal__buttons">
