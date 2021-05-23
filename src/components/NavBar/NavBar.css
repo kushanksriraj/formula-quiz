@@ -1,0 +1,15 @@
+.quiz__nav {
+ display: flex;
+ padding: 1rem 0.5rem;
+ border-bottom: 1px solid black;
+}
+
+.quiz__nav__logo {
+    font-size: 2rem;
+    padding-right: 1rem;
+}
+
+.quiz__nav__text {
+    font-weight: bold;
+    font-size: 1.5rem;
+}

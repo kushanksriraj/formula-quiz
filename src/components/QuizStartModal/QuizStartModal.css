@@ -1,0 +1,7 @@
+.quiz__start__modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: #e4e4e4;
+    position: fixed;
+    top: 0;
+}

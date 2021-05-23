@@ -1,0 +1,20 @@
+.quiz__question {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.option__text {
+  font-size: 1.2rem;
+  border: 1px solid black;
+  padding: 0.25rem;
+}
+
+.wrong {
+  background-color: rgba(255, 0, 0, 0.39);
+  border-color: red;
+}
+
+.right {
+  background-color: rgba(0, 128, 0, 0.52);
+  border-color: green;
+}

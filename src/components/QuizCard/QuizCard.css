@@ -1,0 +1,38 @@
+.quiz__card {
+  margin: 1rem;
+  width: 18rem;
+  height: fit-content;
+  box-shadow: -1px -1px 5px black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.quiz__card__question {
+  padding: 0.25rem;
+}
+
+.quiz__card__rule {
+  padding-left: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.quiz__card__button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.quiz__card__button > button {
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem;
+  background-color: #ff5b5b;
+  border: 3px solid #ff5b5b;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quiz__card__button > button:focus {
+  border-color: grey;
+}
