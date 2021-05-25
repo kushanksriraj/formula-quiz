@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![CI status](https://github.com/kushanksriraj/formula-quiz/actions/workflows/main.yml/badge.svg?branch=development)
 
 ## Available Scripts
 
