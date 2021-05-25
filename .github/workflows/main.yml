@@ -36,6 +36,6 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
           architecture: ${{ matrix.architecture }}
-#       - run: npm 
+      - run: npm install -g npm@latest
       - run: npm install
       - run: npm test
