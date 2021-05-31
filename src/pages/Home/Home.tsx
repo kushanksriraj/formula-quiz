@@ -1,7 +1,6 @@
 import "./Home.css";
-import { useQuiz } from "../../hooks";
+import { useQuiz, useUserData } from "../../hooks";
 import { QuizCard } from "../../components";
-import { useUserData } from "../../context/UserDataContext/UserDataContext";
 
 export const Home = (): JSX.Element => {
   const { quizList, quizLoading, quizError } = useQuiz();
@@ -32,12 +31,13 @@ export const Home = (): JSX.Element => {
   );
 };
 
-
 /**
- * TODO
- * - Style user profile page --- DONE
- * - show option to see result of a quiz, in Quiz Card in User profile page DONE
- * - Refactor big functions, move them to hooks or helper files
- * - Refactor server code
- * - write tests for quizReducer and userReducer
+ * TODOs
+ * - Write Tests for both reducer
+ * - Make a loading componenet and show it inplace of loading
+ * - Refactor server source code
+ * - Refactor Login and SignUp components
+ * - Fix the blank screen after quiz submit
+ * - add more quizzes
+ * - add a "Try these quizzes" prompt on home page
  */

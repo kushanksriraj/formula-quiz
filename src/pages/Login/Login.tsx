@@ -2,8 +2,8 @@ import "./login.css";
 import { useRef, useState } from "react";
 import { Navigate, useLocation } from "react-router";
 import { Link } from "react-router-dom";
-import { useUserData } from "../../context/UserDataContext/UserDataContext";
 import { FromType } from "./login.type";
+import { useUserData } from "../../hooks";
 
 export const Login = (): JSX.Element => {
   const location = useLocation();
@@ -24,8 +24,6 @@ export const Login = (): JSX.Element => {
     const response = await loginUser(email, password);
     !response && setError("Wrong credentials! Try again.");
   };
-
-  console.log({ location, pathRef });
 
   return (
     <>

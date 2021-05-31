@@ -39,16 +39,21 @@ export type UserDataContextType = {
   isUserLoggedIn: boolean;
   userData: UserDataType;
   userLoading: boolean;
+  userDispatch: Dispatch<UserActionType>;
+  setIsUserLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+  setUserLoading: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export type UseUserDataType = {
+  isUserLoggedIn: boolean;
+  userData: UserDataType;
+  userLoading: boolean;
   loginUser: (email: string, password: string) => Promise<boolean>;
   logOutUser: () => void;
   userDispatch: Dispatch<UserActionType>;
   setIsUserLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
   setUserLoading: React.Dispatch<React.SetStateAction<boolean>>;
   getUserData: (path: string) => Promise<void>;
-  submitUserResponse: (
-    path: string,
-    takenQuiz: TakenQuiz
-  ) => Promise<SubmitUserDataResponse | ServerError>;
   signUpUser: ({
     name,
     email,

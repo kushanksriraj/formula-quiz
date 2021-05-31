@@ -1,8 +1,8 @@
 import "./signup.css";
 import { useRef, useState } from "react";
 import { Navigate, useLocation } from "react-router";
-import { useUserData } from "../../context/UserDataContext/UserDataContext";
 import { FromType } from "./signup.types";
+import { useUserData } from "../../hooks";
 
 export const SignUp = (): JSX.Element => {
   const location = useLocation();

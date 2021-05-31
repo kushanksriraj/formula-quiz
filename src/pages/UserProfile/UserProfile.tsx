@@ -1,7 +1,6 @@
 import { QuizCard } from "../../components";
 import { Quiz } from "../../context/QuizContext/quiz.types";
-import { useUserData } from "../../context/UserDataContext/UserDataContext";
-import { useQuiz } from "../../hooks";
+import { useQuiz, useUserData } from "../../hooks";
 import "./user-profile.css";
 
 export const UserProfile = (): JSX.Element => {
@@ -45,7 +44,7 @@ export const UserProfile = (): JSX.Element => {
               totalQuestions={quiz.totalQuestions}
               totalTimeInMinutes={quiz.totalTimeInMinutes}
               quizImage={quiz.quizImage}
-              taken={true} // show result page when taken is true
+              taken={true}
             />
           );
         })}

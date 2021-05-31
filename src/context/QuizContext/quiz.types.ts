@@ -127,6 +127,19 @@ export type QuizContextType = {
   quizLoading: boolean;
   currentQuiz: QuizData | null;
   currentQuizAnswer: TakenQuiz;
+  quizDispatch: Dispatch<QuizActionType>;
+  setQuizList: React.Dispatch<React.SetStateAction<Quiz[]>>;
+  setQuizLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  quizError: string;
+  setQuizError: React.Dispatch<React.SetStateAction<string>>;
+  setCurrentQuiz: React.Dispatch<React.SetStateAction<QuizData | null>>;
+};
+
+export type UseQuizType = {
+  quizList: Quiz[];
+  quizLoading: boolean;
+  currentQuiz: QuizData | null;
+  currentQuizAnswer: TakenQuiz;
   getCurrentQuizData: (_id: string) => Promise<void>;
   quizDispatch: Dispatch<QuizActionType>;
   setQuizList: React.Dispatch<React.SetStateAction<Quiz[]>>;

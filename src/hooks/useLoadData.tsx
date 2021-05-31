@@ -1,21 +1,17 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
-import { useUserData } from "../context/UserDataContext/UserDataContext";
-import { ServerError } from "../context/UserDataContext/userData.types";
 import { BASE_URL } from "../helper/api.config";
 import { useQuiz } from "./useQuiz";
-import { QuizListResponse } from "../context/QuizContext/quiz.types";
+import { useAxios } from "./useAxios";
+import { useUserData } from "./useUserData";
 
 export const useLoadData = (): void => {
   const { logOutUser, setIsUserLoggedIn, setUserLoading, getUserData } =
     useUserData();
   const { setQuizList, setQuizLoading, setQuizError } = useQuiz();
   const navigate = useNavigate();
-
-  const setAxiosBaseURL = (BASE_URL: string): void => {
-    axios.defaults.baseURL = BASE_URL;
-  };
+  const { setAxiosBaseURL, setAxiosAuthHeader, getQuizList } = useAxios();
 
   const setAxiosIntercept = (): void => {
     const UNAUTHORIZED = 401;
@@ -29,35 +25,6 @@ export const useLoadData = (): void => {
         return Promise.reject(error);
       }
     );
-  };
-
-  const setAxiosAuthHeader = (token: string | null): void => {
-    if (token) {
-      axios.defaults.headers.common["Authorization"] = token;
-      return;
-    }
-    delete axios.defaults.headers.common["Authorization"];
-  };
-
-  const getQuizList = async (
-    path: string
-  ): Promise<QuizListResponse | ServerError> => {
-    try {
-      const response = await axios.get<QuizListResponse>(path);
-      return response.data;
-    } catch (error) {
-      if (axios.isAxiosError(error)) {
-        const serverError = error as AxiosError<ServerError>;
-        if (serverError && serverError.response) {
-          return serverError.response.data;
-        }
-      }
-      console.error(error);
-      return {
-        success: false,
-        message: "Something went wrong! No axios error detected.",
-      };
-    }
   };
 
   useEffect(() => {

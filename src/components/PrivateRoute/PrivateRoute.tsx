@@ -1,5 +1,5 @@
 import { Navigate, Route, useLocation } from "react-router";
-import { useUserData } from "../../context/UserDataContext/UserDataContext";
+import { useUserData } from "../../hooks";
 import { PrivateRouteType } from "./privateRoute.types";
 
 export const PrivateRoute = (props: PrivateRouteType): JSX.Element => {

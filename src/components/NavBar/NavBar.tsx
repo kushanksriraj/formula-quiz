@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { useUserData } from "../../context/UserDataContext/UserDataContext";
+import { useUserData } from "../../hooks";
 import "./NavBar.css";
 
 export const NavBar = (): JSX.Element => {

@@ -45,6 +45,7 @@ export type UseAxiosReturnType = {
 };
 
 export const useAxios = (): UseAxiosReturnType => {
+    
   const setAxiosBaseURL = (BASE_URL: string): void => {
     axios.defaults.baseURL = BASE_URL;
   };
@@ -219,7 +220,6 @@ export const useAxios = (): UseAxiosReturnType => {
 
   return {
     setAxiosBaseURL,
-    //setAxiosIntercept
     setAxiosAuthHeader,
     loginAndGetUserData,
     getUserDataResponse,
