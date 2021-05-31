@@ -1,84 +1,107 @@
-import { QuizState } from "../context/QuizContext/quiz.types";
+import { TakenQuiz } from "../context/QuizContext/quiz.types";
 import { quizReducer } from "./quizReducer";
 
 describe("Test Quiz Reducer", () => {
-  test("Should save data on submit", () => {
-    const initialState: QuizState = {
-      userData: {
-        id: "",
-        name: "",
-        email: "",
-        token: "",
-        takenQuizzes: [],
-      },
-      quizList: [],
+
+  test("Should reset state and set new quiz id", () => {
+    const initialState: TakenQuiz = {
+      score: 30,
+      answerList: [
+        {
+          questionId: "454cbcbb45b65342erwb",
+          selectedOptionId: "454cwerwerwer90c0b",
+          isCorrect: true,
+        },
+      ],
+      quizId: "454cbcbb45b65490c0b",
     };
 
     const reducedState = quizReducer(initialState, {
-      type: "SAVE_DATA_ON_SUBMIT",
+      type: "RESET_AND_SET_NEW_QUIZ_ID",
       payload: {
-        takenQuiz: {
-          quizId: "34bsfusyf32",
-          score: 20,
-          answers: [
-            {
-              questionId: "sdf4rfrfd",
-              isCorrect: true,
-              selectedOptionId: "fg4fd",
-            },
-          ],
+        quizId: "new_quiz_id",
+      },
+    });
+
+    expect(reducedState).toEqual({
+      score: 0,
+      answerList: [],
+      quizId: "new_quiz_id",
+    });
+  });
+
+  test("Should set score", () => {
+    const initialState: TakenQuiz = {
+      score: 10,
+      answerList: [
+        {
+          questionId: "454cbcbb45b65342erwb",
+          selectedOptionId: "454cwerwerwer90c0b",
+          isCorrect: true,
+        },
+      ],
+      quizId: "454cbcbb45b65490c0b",
+    };
+
+    const reducedState = quizReducer(initialState, {
+      type: "SET_SCORE",
+      payload: {
+        score: 20,
+      },
+    });
+
+    expect(reducedState).toEqual({
+      score: 20,
+      answerList: [
+        {
+          questionId: "454cbcbb45b65342erwb",
+          selectedOptionId: "454cwerwerwer90c0b",
+          isCorrect: true,
+        },
+      ],
+      quizId: "454cbcbb45b65490c0b",
+    });
+  });
+  
+  test("Should save answers", () => {
+    const initialState: TakenQuiz = {
+      score: 20,
+      answerList: [
+        {
+          questionId: "454cbcbb45b65342erwb",
+          selectedOptionId: "454cwerwerwer90c0b",
+          isCorrect: true,
+        },
+      ],
+      quizId: "454cbcbb45b65490c0b",
+    };
+
+    const reducedState = quizReducer(initialState, {
+      type: "SAVE_ANSWER",
+      payload: {
+        answer: {
+          questionId: "666bcbb45b65342erwb",
+          selectedOptionId: "9994cwerwerwer90c0b",
+          isCorrect: false,
         },
       },
     });
 
     expect(reducedState).toEqual({
-      userData: {
-        id: "",
-        name: "",
-        email: "",
-        token: "",
-        takenQuizzes: [
-          {
-            quizId: "34bsfusyf32",
-            score: 20,
-            answers: [
-              {
-                questionId: "sdf4rfrfd",
-                isCorrect: true,
-                selectedOptionId: "fg4fd",
-              },
-            ],
-          },
-        ],
-      },
-      quizList: [],
-    });
-  });
-  test("Should clear userData", () => {
-    const initialState: QuizState = {
-      userData: {
-        id: "vmnfruiefnd",
-        name: "Kushank",
-        email: "kushank@gmail.com",
-        token: "dsjkfb34rfiewuhfe",
-        takenQuizzes: [],
-      },
-      quizList: [],
-    };
-
-    const reducedState = quizReducer(initialState, {
-      type: "FLUSH_USER_DATA",
-    });
-
-    expect(reducedState).toEqual({
-      userData: {
-        id: "",
-        name: "",
-        email: "",
-        token: "",
-        takenQuizzes: [],
-      },
-      quizList: [],
+      score: 20,
+      answerList: [
+        {
+          questionId: "454cbcbb45b65342erwb",
+          selectedOptionId: "454cwerwerwer90c0b",
+          isCorrect: true,
+        },
+        {
+          questionId: "666bcbb45b65342erwb",
+          selectedOptionId: "9994cwerwerwer90c0b",
+          isCorrect: false,
+        },
+      ],
+      quizId: "454cbcbb45b65490c0b",
     });
   });
 });

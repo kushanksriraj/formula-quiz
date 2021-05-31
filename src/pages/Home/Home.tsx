@@ -33,7 +33,6 @@ export const Home = (): JSX.Element => {
 
 /**
  * TODOs
- * - Write Tests for both reducer
  * - Make a loading componenet and show it inplace of loading
  * - Refactor server source code
  * - Refactor Login and SignUp components
