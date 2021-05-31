@@ -1,7 +1,8 @@
-import { QuizCardProps } from "../../context/quiz.types";
+import { QuizCardProps } from "../../context/QuizContext/quiz.types";
 import "./QuizCard.css";
 import { useState } from "react";
 import { QuizStartModal } from "../";
+import { Link } from "react-router-dom";
 export const QuizCard = (props: QuizCardProps): JSX.Element => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
@@ -17,8 +18,19 @@ export const QuizCard = (props: QuizCardProps): JSX.Element => {
           </ul>
         </div>
         <div className="quiz__card__button">
-          <button onClick={() => setShowModal(true)}>Start quiz</button>
+          {props.taken && (
+            <Link
+              to={`/quiz/${props.id}/result`}
+              className="quiz__card__result"
+            >
+              See result
+            </Link>
+          )}
+          <button onClick={() => setShowModal(true)}>
+            {props.taken ? "Restart quiz" : "Start quiz"}
+          </button>
         </div>
+        {props.taken && <div className="quiz__card__taken">Already taken!</div>}
       </article>
       {showModal && (
         <QuizStartModal
@@ -29,6 +41,7 @@ export const QuizCard = (props: QuizCardProps): JSX.Element => {
           totalQuestions={props.totalQuestions}
           totalTimeInMinutes={props.totalTimeInMinutes}
           quizImage={props.quizImage}
+          taken={props.taken}
         />
       )}
     </>

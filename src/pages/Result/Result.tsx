@@ -1,32 +1,42 @@
 import "./Result.css";
 import { useParams } from "react-router";
+import { useUserData } from "../../context/UserDataContext/UserDataContext";
 import { useQuiz } from "../../hooks";
+import { useEffect } from "react";
 
 export const Result = (): JSX.Element => {
   const { id } = useParams();
-  const { state } = useQuiz();
+  const { currentQuiz, quizLoading, getCurrentQuizData, quizError } = useQuiz();
+  const { userData, userLoading } = useUserData();
 
-  const selectedQuiz = state.quizList.find((quiz) => quiz.id === id);
+  useEffect(() => {
+    !userLoading && getCurrentQuizData(id);
+  }, [userLoading]);
 
-  const quizResult = state.userData.takenQuizzes.find(
-    (answer) => answer.quizId === id
-  );
+  const quizResult =
+    !quizLoading &&
+    !userLoading &&
+    userData.takenQuizList.find((quiz) => quiz.quizId === id);
 
   const getCSSClass = (questionId: string, optionId: string): string => {
-    const question = selectedQuiz?.questions.find(
-      (question) => question.id === questionId
+    const question = currentQuiz?.questionList.find(
+      (question) => question._id === questionId
     );
-    const option = question?.options.find((option) => option.id === optionId);
-
-    const answeredQuestion = quizResult?.answers.find(
-      (answer) => answer.questionId === questionId
+    const option = question?.optionList.find(
+      (option) => option._id === optionId
     );
 
-    if (option?.id === answeredQuestion?.selectedOptionId) {
-      if (option?.isRight) {
-        return "right option__text";
+    const answeredQuestion =
+      quizResult &&
+      quizResult.answerList.find((answer) => answer.questionId === questionId);
+
+    if (answeredQuestion) {
+      if (option?._id === answeredQuestion.selectedOptionId) {
+        if (option?.isRight) {
+          return "right option__text";
+        }
+        return "wrong option__text";
       }
-      return "wrong option__text";
     }
 
     if (option?.isRight) {
@@ -37,38 +47,39 @@ export const Result = (): JSX.Element => {
 
   return (
     <div className="quiz__result">
-      <img className="quiz__result__img" src={selectedQuiz?.quizImage} alt="" />
-      <div className="quiz__result__title">{selectedQuiz?.title}</div>
+      {(userLoading || quizLoading) && <h2>Loading...</h2>}
+      {quizError !== "" && <h2>{quizError}</h2>}
+      <img className="quiz__result__img" src={currentQuiz?.quizImage} alt="" />
+      <div className="quiz__result__title">{currentQuiz?.title}</div>
       <div className="quiz__result__score">
         <div className="quiz__result__score-text">Score</div>
         <div className="quiz__result__score-marks">
           <span className="quiz__result__score-user">
             {" "}
-            {quizResult?.score || 0}{" "}
+            {(quizResult && quizResult.score) || 0}{" "}
           </span>{" "}
-          / {selectedQuiz?.totalScore}
+          / {currentQuiz?.totalScore}
         </div>
       </div>
 
       <div className="quiz__result__review-prompt">Review your answers</div>
 
       <div className="quiz__result__review">
-        {selectedQuiz?.questions.map((question, index) => {
+        {currentQuiz?.questionList.map((question, index) => {
           return (
-            <div key={question.id} className="quiz__result__review-body">
+            <div key={question._id} className="quiz__result__review-body">
               <div className="quiz__result__review-question">
                 <span className="quiz__result__review-question-q">
-                Q.{index + 1}
-
+                  Q.{index + 1}
                 </span>
-                 {question.text}
+                {question.text}
               </div>
               <div className="quiz__result__review-options">
-                {question.options.map((option) => {
+                {question.optionList.map((option) => {
                   return (
                     <div
-                      key={option.id}
-                      className={getCSSClass(question.id, option.id)}
+                      key={option._id}
+                      className={getCSSClass(question._id, option._id)}
                     >
                       {option.text}
                     </div>

@@ -1,32 +1,28 @@
-import { QuizState, ActionType } from "../context/quiz.types";
+import { TakenQuiz, QuizActionType } from "../context/QuizContext/quiz.types";
 
 export const quizReducer = (
-  state: QuizState,
-  action: ActionType
-): QuizState => {
+  state: TakenQuiz,
+  action: QuizActionType
+): TakenQuiz => {
   switch (action.type) {
-    case "SAVE_DATA_ON_SUBMIT":
+    case "RESET_AND_SET_NEW_QUIZ_ID":
       return {
-        ...state,
-        userData: {
-          ...state.userData,
-          takenQuizzes: state.userData.takenQuizzes.concat(
-            action.payload.takenQuiz
-          ),
-        },
+        score: 0,
+        answerList: [],
+        quizId: action.payload.quizId,
       };
 
-    case "FLUSH_USER_DATA":
+    case "SET_SCORE":
       return {
         ...state,
-        userData: {
-          id: "",
-          name: "",
-          email: "",
-          token: "",
-          takenQuizzes: [],
-        },
+        score: action.payload.score,
       };
+    case "SAVE_ANSWER":
+      return {
+        ...state,
+        answerList: state.answerList.concat(action.payload.answer),
+      };
+
     default:
       return state;
   }

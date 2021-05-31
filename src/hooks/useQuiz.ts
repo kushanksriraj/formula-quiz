@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { QuizContext } from "../context";
-import { ContextType } from "../context/quiz.types";
+import { QuizContextType } from "../context/QuizContext/quiz.types";
+import { QuizContext } from "../context/QuizContext/QuizContext";
 
-export const useQuiz = (): ContextType => {
+export const useQuiz = (): QuizContextType => {
   const contextValue = useContext(QuizContext);
   return contextValue!;
 };

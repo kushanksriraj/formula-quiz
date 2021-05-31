@@ -3,15 +3,17 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { QuizProvider } from "./context";
+import { QuizProvider, UserDataProvider } from "./context";
 
 ReactDOM.render(
   <React.StrictMode>
-    <QuizProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </QuizProvider>
+    <BrowserRouter>
+      <UserDataProvider>
+        <QuizProvider>
+          <App />
+        </QuizProvider>
+      </UserDataProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

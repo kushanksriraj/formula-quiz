@@ -1,29 +1,38 @@
 import React, { Dispatch } from "react";
 
 export type Option = {
-  id: string;
+  _id: string;
   text: string;
   isRight: boolean;
 };
 
 export type Question = {
-  id: string;
+  _id: string;
   text: string;
   positiveMarks: number;
   negativeMarks: number;
   timeInSeconds: string;
   questionImage: string;
-  options: Option[];
+  optionList: Option[];
 };
 
-export type Quiz = {
-  id: string;
+export type QuizData = {
+  _id: string;
   title: string;
   totalTimeInMinutes: string;
   totalScore: number;
   totalQuestions: number;
   quizImage: string;
-  questions: Question[];
+  questionList: Question[];
+};
+
+export type Quiz = {
+  _id: string;
+  title: string;
+  totalTimeInMinutes: string;
+  totalScore: number;
+  totalQuestions: number;
+  quizImage: string;
 };
 
 export type QuizAnswer = {
@@ -35,36 +44,15 @@ export type QuizAnswer = {
 export type TakenQuiz = {
   quizId: string;
   score: number;
-  answers: QuizAnswer[];
+  answerList: QuizAnswer[];
 };
 
 export type UserType = {
-  id: string;
+  _id: string;
   name: string;
   email: string;
   token: string;
-  takenQuizzes: TakenQuiz[];
-};
-
-export type QuizState = {
-  userData: UserType;
-  quizList: Quiz[];
-};
-
-export type ActionType =
-  | {
-      type: "SAVE_DATA_ON_SUBMIT";
-      payload: {
-        takenQuiz: TakenQuiz;
-      };
-    }
-  | {
-      type: "FLUSH_USER_DATA";
-    };
-
-export type ContextType = {
-  state: QuizState;
-  dispatch: Dispatch<ActionType>;
+  takenQuizList: TakenQuiz[];
 };
 
 export type QuizProviderProp = {
@@ -77,6 +65,7 @@ export type QuizCardProps = {
   totalTimeInMinutes: string;
   totalQuestions: number;
   quizImage: string;
+  taken: boolean;
 };
 
 export type QuizStartModalProps = {
@@ -87,18 +76,37 @@ export type QuizStartModalProps = {
   totalQuestions: number;
   totalTimeInMinutes: string;
   quizImage: string;
+  taken: boolean;
 };
 
 export type QuestionPropType = {
   question: Question;
-  dispatch: React.Dispatch<AnswerActionType>;
-  state: TakenQuiz;
   loadNextQuestion: () => void;
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export type AnswerActionType =
+export type OptionPropType = {
+  option: Option;
+  callback: (id: string, isRight: boolean) => void;
+  loading: boolean;
+};
+
+export type QuizListResponse = {
+  success: boolean;
+  quizzes: Quiz[];
+};
+
+export type ServerError = {
+  success: false;
+  message: string;
+};
+
+export type QuizActionType =
+  | {
+      type: "RESET_AND_SET_NEW_QUIZ_ID";
+      payload: { quizId: string };
+    }
   | {
       type: "SET_SCORE";
       payload: { score: number };
@@ -114,8 +122,21 @@ export type AnswerActionType =
       };
     };
 
-export type OptionPropType = {
-  option: Option;
-  callback: (id: string, isRight: boolean) => void;
-  loading: boolean;
+export type QuizContextType = {
+  quizList: Quiz[];
+  quizLoading: boolean;
+  currentQuiz: QuizData | null;
+  currentQuizAnswer: TakenQuiz;
+  getCurrentQuizData: (_id: string) => Promise<void>;
+  quizDispatch: Dispatch<QuizActionType>;
+  setQuizList: React.Dispatch<React.SetStateAction<Quiz[]>>;
+  setQuizLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  quizError: string;
+  setQuizError: React.Dispatch<React.SetStateAction<string>>;
+  setCurrentQuiz: React.Dispatch<React.SetStateAction<QuizData | null>>;
+};
+
+export type CurrentQuizResponse = {
+  success: boolean;
+  quiz: QuizData;
 };

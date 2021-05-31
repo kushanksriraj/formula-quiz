@@ -1,4 +1,4 @@
-import { QuizState } from "../context/quiz.types";
+import { QuizState } from "../context/QuizContext/quiz.types";
 import { quizReducer } from "./quizReducer";
 
 describe("Test Quiz Reducer", () => {

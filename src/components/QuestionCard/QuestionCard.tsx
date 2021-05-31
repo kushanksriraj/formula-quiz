@@ -1,37 +1,40 @@
 import "./QuestionCard.css";
-import { QuestionPropType } from "../../context/quiz.types";
+import { QuestionPropType } from "../../context/QuizContext/quiz.types";
 import { Option } from "./Option";
+import { useQuiz } from "../../hooks";
 
 export const QuestionCard = ({
   question,
-  dispatch,
-  state,
   loadNextQuestion,
   loading,
   setLoading,
 }: QuestionPropType): JSX.Element => {
+  const { currentQuizAnswer, quizDispatch } = useQuiz();
+
   const isAlreadyAnswered = (questionId: string): boolean =>
-    state.answers.some((question) => question.questionId === questionId);
+    currentQuizAnswer.answerList.some(
+      (question) => question.questionId === questionId
+    );
 
   const selectOptionOnClick = (id: string, isRight: boolean): void => {
     !loading &&
-      !isAlreadyAnswered(question.id) &&
-      dispatch({
+      !isAlreadyAnswered(question._id) &&
+      quizDispatch({
         type: "SET_SCORE",
         payload: {
           score: isRight
-            ? state.score + question.positiveMarks
-            : state.score - question.negativeMarks,
+            ? currentQuizAnswer.score + question.positiveMarks
+            : currentQuizAnswer.score - question.negativeMarks,
         },
       });
 
     !loading &&
-      !isAlreadyAnswered(question.id) &&
-      dispatch({
+      !isAlreadyAnswered(question._id) &&
+      quizDispatch({
         type: "SAVE_ANSWER",
         payload: {
           answer: {
-            questionId: question.id,
+            questionId: question._id,
             selectedOptionId: id,
             isCorrect: isRight,
           },
@@ -48,10 +51,10 @@ export const QuestionCard = ({
     <div>
       <div className="quiz__question">Q. {question.text}</div>
       <div className="quiz__options">
-        {question.options.map((option) => {
+        {question.optionList.map((option) => {
           return (
             <Option
-              key={option.id}
+              key={option._id}
               option={option}
               callback={selectOptionOnClick}
               loading={loading}
