@@ -1,0 +1,1 @@
+export const BASE_URL = "https://formula-quiz-backend.kushanksriraj.repl.co";

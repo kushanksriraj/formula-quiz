@@ -1,0 +1,48 @@
+.quiz__nav {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  position: fixed;
+  top: 0;
+  height: 5rem;
+  background-color: #ffffff;
+  width: 100%;
+  box-shadow: 0px 0px 0.625rem #1f1f2718;
+}
+
+.quiz__nav__logo {
+  font-size: 2rem;
+  padding-right: 1.5rem;
+  cursor: pointer;
+}
+
+.quiz__nav__text {
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.quiz__nav__account {
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.quiz__nav__account-greet {
+  display: none;
+}
+
+@media screen and (min-width: 721px) {
+  .quiz__nav__account-greet {
+    display: block;
+    font-weight: 600;
+    padding: 0 1rem;
+    font-size: large;
+  }
+}
+
+.quiz__nav__logo-account {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
