@@ -1,0 +1,93 @@
+.user__container {
+}
+
+.user__greet {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 1.25rem;
+}
+
+.user__greet-text {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.user__data__container {
+  max-width: 700px;
+  margin: auto;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user__data {
+  margin: 0 1rem;
+  border: 1px solid #000000;
+  padding: 0.25rem 1rem;
+  border-radius: 5px;
+}
+
+.user__data__name-wrapper {
+  padding: 0.5rem;
+  padding-left: 0;
+  font-weight: 600;
+  color: #313131;
+}
+
+.user__data__name {
+  font-size: large;
+  color: black;
+  padding-left: 0.5rem;
+}
+
+.user__data__email-wrapper {
+  padding: 0.5rem;
+  padding-left: 0;
+  font-weight: 600;
+  color: #313131;
+}
+
+.user__data__email {
+  font-size: large;
+  color: black;
+  padding-left: 0.5rem;
+}
+
+.user__logout__btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem;
+  padding-right: 0;
+}
+
+.user__logout__btn {
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  background-color: #000000;
+  border: 3px solid #000000;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.user__takenquiz-prompt {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 3rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+  padding-left: 0.75rem;
+}
+
+.user__takenquiz__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 1rem;
+}

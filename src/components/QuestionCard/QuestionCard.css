@@ -1,0 +1,39 @@
+.quiz__question {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}
+
+.quiz__options {
+  display: block;
+  background-color: #1f1f2718;
+  padding: 1rem 0.75rem;
+  margin: 1rem 0.5rem;
+}
+
+@media screen and (min-width: 721px) {
+  .quiz__options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.option__text {
+  font-size: 1.2rem;
+  border: 2px solid #1f1f2718;
+  padding: 0.75rem;
+  margin: 0.5rem;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.wrong {
+  background-color: rgba(255, 0, 0, 0.39);
+  border-color: red;
+}
+
+.right {
+  background-color: rgba(0, 128, 0, 0.52);
+  border-color: green;
+}

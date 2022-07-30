@@ -1,0 +1,149 @@
+.signup__container {
+  padding: 0.5rem;
+  margin-top: 8rem;
+}
+
+.signup {
+  background-color: #1f1f2718;
+  max-width: 400px;
+  margin: auto;
+  padding: 1.75rem;
+}
+
+.signup > h2 {
+  margin-bottom: 1rem;
+}
+
+.signup > form {
+  background-color: #ffffff;
+  padding: 1rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup__name {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  width: 100%;
+}
+
+.signup__name > label {
+  font-weight: 600;
+  font-size: large;
+}
+
+.signup__name > input {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.signup__email {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  width: 100%;
+}
+
+.signup__email > label {
+  font-weight: 600;
+  font-size: large;
+}
+
+.signup__email > input {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.signup__password {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  width: 100%;
+}
+
+.signup__password > label {
+  font-weight: 600;
+  font-size: large;
+}
+
+.signup__password-box {
+  position: relative;
+}
+
+.signup__password-hide {
+  position: absolute;
+  right: 0.75rem;
+  top: 1rem;
+  padding-right: 0;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.signup__password-box > input {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.signup__password-confirm {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  width: 100%;
+}
+
+.signup__password-confirm > label {
+  font-weight: 600;
+  font-size: large;
+}
+
+.signup__password-confirm > input {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.signup__error {
+  padding-left: 0.25rem;
+  height: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #e70909;
+}
+
+.signup__btn {
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.signup__btn > button {
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: #ff5b5b;
+  border: 3px solid #ff5b5b;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
