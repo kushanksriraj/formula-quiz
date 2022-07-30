@@ -36,7 +36,9 @@ export const useLoadData = (): void => {
         if (localLoginData) {
           const loginData: { isUserLoggedIn: boolean; token: string } =
             JSON.parse(localLoginData);
-          loginData.isUserLoggedIn && setIsUserLoggedIn(true);
+          if (loginData.isUserLoggedIn) {
+            setIsUserLoggedIn(true);
+          }
           setAxiosAuthHeader(loginData.token);
           await getUserData("/user");
         }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Dispatch } from "react";
 import { TakenQuiz } from "../QuizContext/quiz.types";
 
@@ -42,6 +43,9 @@ export type UserDataContextType = {
   userDispatch: Dispatch<UserActionType>;
   setIsUserLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
   setUserLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  socket: any;
+  sessionModal: any;
+  setSessionModal: React.Dispatch<React.SetStateAction<any>>;
 };
 
 export type UseUserDataType = {
@@ -61,6 +65,8 @@ export type UseUserDataType = {
     path,
   }: SignUpArgsType) => Promise<boolean>;
   resetQuizData: (path: string) => Promise<boolean>;
+  sessionModal: any;
+  setSessionModal: React.Dispatch<React.SetStateAction<any>>;
 };
 
 export type UserDataResponse = {
