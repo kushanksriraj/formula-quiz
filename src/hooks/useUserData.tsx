@@ -22,6 +22,9 @@ export const useUserData = (): UseUserDataType => {
     userLoading,
     setIsUserLoggedIn,
     setUserLoading,
+    socket,
+    sessionModal,
+    setSessionModal,
   } = useContext(UserDataContext);
   const navigate = useNavigate();
 
@@ -73,6 +76,9 @@ export const useUserData = (): UseUserDataType => {
     } catch (err) {
       console.error(err);
     }
+    socket?.emit("logout-me-out", {
+      email: userData.email,
+    });
     setUserLoading(false);
     navigate("/");
     return;
@@ -136,5 +142,7 @@ export const useUserData = (): UseUserDataType => {
     logOutUser,
     signUpUser,
     resetQuizData,
+    sessionModal,
+    setSessionModal,
   };
 };

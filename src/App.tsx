@@ -11,6 +11,7 @@ import {
 } from "./pages";
 import { NavBar, PrivateRoute } from "./components";
 import { useLoadData } from "./hooks";
+import { SessionsModal } from "./components/SessionsModal/SessionsModal";
 
 function App(): JSX.Element {
   useLoadData();
@@ -22,12 +23,13 @@ function App(): JSX.Element {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
-        
+
         <PrivateRoute path="/quiz/:id" element={<Quiz />} />
         <PrivateRoute path="/quiz/:id/result" element={<Result />} />
         <PrivateRoute path="/user" element={<UserProfile />} />
         <Route path="*" element={<UndefinedRoute />} />
       </Routes>
+      <SessionsModal />
     </div>
   );
 }

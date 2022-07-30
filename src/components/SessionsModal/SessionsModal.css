@@ -1,0 +1,64 @@
+.sessions_modal__wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  top: 0;
+}
+
+.sessions_modal__container {
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgb(83, 83, 83);
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 1rem;
+  box-shadow: 0px 1px 25px 2px rgba(196, 196, 196, 1);
+}
+
+.sessions_modal__button_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 2rem;
+}
+
+.sessions_modal__button_container > button {
+  padding: 0.5rem;
+}
+
+.sessions_modal__rooms_container {
+  margin-top: 1rem;
+  border: 1px solid rgb(83, 83, 83);
+  padding: 0.5rem;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+
+.sessions_modal__rooms_container > p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.sessions_modal__rooms_container > p > button {
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+.user-id-wrapper {
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
